@@ -28,17 +28,22 @@ function App() {
 
   const addTransaction = newTransaction => {
     setTransactions(prevTransactions => [...prevTransactions, newTransaction]);
-    setFilteredTransactions(prevTransactions => [...prevTransactions, newTransaction]);
+    setFilteredTransactions(prevFilteredTransactions => [...prevFilteredTransactions, newTransaction]);
   };
-
+  
   const handleSearch = searchTerm => {
-    if (!transactions) return;
-
-    const filtered = transactions.filter(transaction =>
-      transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredTransactions(filtered);
+    const trimmedSearchTerm = searchTerm.trim().toLowerCase();
+    if (!trimmedSearchTerm) {
+      setFilteredTransactions(transactions);
+    } else {
+      const filtered = transactions.filter(transaction =>
+        transaction.description.toLowerCase().includes(trimmedSearchTerm)
+      );
+      setFilteredTransactions(filtered);
+    }
   };
+  
+  
 
   return (
     <div className="app-container">

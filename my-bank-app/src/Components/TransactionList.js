@@ -13,7 +13,7 @@ function TransactionList() {
       })
       .then(data => {
         console.log('Fetched data:', data);
-        setTransactions(data.transactions);
+        setTransactions(data);
       })
       .catch(error => {
         console.error('Error fetching transactions:', error);

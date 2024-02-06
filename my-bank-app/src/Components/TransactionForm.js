@@ -18,7 +18,7 @@ function TransactionForm({ addTransaction }) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    const newTransaction = { ...formData, id: Date.now() }; // Generate a temporary unique id
+    const newTransaction = { ...formData, id: Date.now() }; 
     addTransaction(newTransaction);
     setFormData({
       date: '',
