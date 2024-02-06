@@ -9,7 +9,7 @@ function App() {
   const [filteredTransactions, setFilteredTransactions] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/transactions')
+    fetch('http://localhost:3500/transactions')
       .then(response => {
         if (!response.ok) {
           throw new Error('Failed to fetch transactions');

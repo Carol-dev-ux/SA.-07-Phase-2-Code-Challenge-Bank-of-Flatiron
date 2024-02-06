@@ -1,26 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from "react";
 
-function TransactionList() {
-  const [transactions, setTransactions] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:3000/transactions')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch transactions');
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log('Fetched data:', data);
-        setTransactions(data);
-      })
-      .catch(error => {
-        console.error('Error fetching transactions:', error);
-      });
-  }, []);
-
-  // Check if transactions array is empty or undefined
+function TransactionList({ transactions }) {
   if (!transactions || transactions.length === 0) {
     return <p>No transactions available.</p>;
   }
@@ -38,7 +18,7 @@ function TransactionList() {
           </tr>
         </thead>
         <tbody>
-          {transactions.map(transaction => (
+          {transactions.map((transaction) => (
             <tr key={transaction.id}>
               <td>{transaction.date}</td>
               <td>{transaction.description}</td>
