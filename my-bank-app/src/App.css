@@ -1,0 +1,75 @@
+/* App container */
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* App title */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #d12a97;
+}
+
+/* Transaction form */
+.transaction-form {
+  margin-bottom: 20px;
+}
+
+.transaction-form input[type="date"],
+.transaction-form input[type="text"],
+.transaction-form input[type="number"] {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.transaction-form button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.transaction-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Search bar */
+.search-bar input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+}
+
+/* Transaction list */
+.transaction-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transaction-list th,
+.transaction-list td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.transaction-list th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.transaction-list td {
+  font-size: 16px;
+}
+
+/* Error message */
+.error-message {
+  color: #ff0000;
+  font-style: italic;
+}
